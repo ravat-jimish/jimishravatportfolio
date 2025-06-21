@@ -66,13 +66,13 @@ Here's a glimpse into the technologies and tools I frequently work with:
 
 
 
-### 📈 GitHub Stats
+<!-- ### 📈 GitHub Stats
 
 <div align="center">
   <img src="https://github-readme-stats.vercel.app/api?username=ravat-jimish&show_icons=true&theme=radical&hide_border=true" alt="Jimish Ravat's GitHub Stats" />
   <img src="https://github-readme-streak-stats.herokuapp.com/?user=ravat-jimish&theme=radical&hide_border=true" alt="Jimish Ravat's GitHub Streak" />
   <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=ravat-jimish&layout=compact&theme=radical&hide_border=true" alt="Jimish Ravat's Top Languages" />
-</div>
+</div> -->
 
 ---
 
@@ -80,9 +80,9 @@ Here's a glimpse into the technologies and tools I frequently work with:
 
 I'm always open to collaborating on interesting projects, sharing knowledge, or just having a chat about technology. Feel free to reach out!
 
-* **LinkedIn:** [https://www.linkedin.com/in/jimishravat/](https://www.linkedin.com/in/jimishravat/) *(Replace with your actual LinkedIn URL)*
-* **Email:** [ravat.jimish@gmail.com](mailto:ravat.jimish@gmail.com) *(Replace with your actual email address)*
-* **Portfolio Website:** [Your Portfolio Website URL (if you have one)](Your Portfolio Website URL)
+* **LinkedIn:** [https://www.linkedin.com/in/jimishravat/](https://www.linkedin.com/in/jimishravat/) 
+* **Email:** [ravat.jimish@gmail.com](mailto:ravat.jimish@gmail.com) 
+<!-- * **Portfolio Website:** [Your Portfolio Website URL (if you have one)](Your Portfolio Website URL) -->
 
 ---
 
