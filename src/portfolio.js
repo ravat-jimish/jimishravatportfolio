@@ -209,8 +209,8 @@ const workExperiences = {
 To know how to get github key look at readme.md */
 
 const openSource = {
-  showGithubProfile: "false", // Set true or false to show Contact profile using Github, defaults to true
-  display: true // Set false to hide this section, defaults to true
+  showGithubProfile: "true", // Set true or false to show Contact profile using Github, defaults to true
+  display: false // Set false to hide this section, defaults to true
 };
 
 // Some big projects you have worked on
@@ -220,13 +220,37 @@ const bigProjects = {
   subtitle: "SOME STARTUPS AND FREELANCE CLIENTS THAT I HELPED TO CREATE THEIR TECH",
   projects: [
     {
+      image: require("./assets/images/phishing.png"),
+      projectName: "Phishing Detection Chrome Extenstion",
+      projectDesc: "Made a phishing detection chrome extension using the Virus Total API for a U.K. based client.",
+      footerLink: [
+        {
+          name: "See the Post",
+          url: "https://www.linkedin.com/posts/jimishravat_freelanceproject-chromeextension-websecurity-activity-7332832502161498112-EPUw?utm_source=share&utm_medium=member_desktop&rcm=ACoAAC2Jey0BVDxxuvssNOApHcZDljPm3V2KrUM"
+        }
+        //  you can add extra buttons here.
+      ]
+    },
+    {
       image: require("./assets/images/bluesync.jpg"),
       projectName: "Blue Sync Softwares",
-      projectDesc: "Helped them in building landing website",
+      projectDesc: "Designed and developed a custom website from scratch for a client, delivering a responsive and visually engaging user experience.",
       footerLink: [
         {
           name: "Visit Website",
           url: "http://bluesyncsoftwares.com/"
+        }
+        //  you can add extra buttons here.
+      ]
+    },
+    {
+      image: require("./assets/images/realtime.png"),
+      projectName: "Real-Time Network Threat Detection",
+      projectDesc: "Designed to defend against DDoS and suspicious activity proactively for a U.K. based client",
+      footerLink: [
+        {
+          name: "See the Post",
+          url: "https://www.linkedin.com/posts/jimishravat_freelanceproject-chromeextension-websecurity-activity-7332832502161498112-EPUw?utm_source=share&utm_medium=member_desktop&rcm=ACoAAC2Jey0BVDxxuvssNOApHcZDljPm3V2KrUM"
         }
         //  you can add extra buttons here.
       ]
