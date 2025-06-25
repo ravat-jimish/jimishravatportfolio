@@ -156,18 +156,18 @@ const techStack = {
   experience: [
     {
       Stack: "React/Redux", //Insert stack or technology you have experience in
-      progressPercentage: "90%" //Insert relative proficiency in percentage
+      // progressPercentage: "90%" //Insert relative proficiency in percentage
     },
     {
       Stack: "Backend - NodeJS",
-      progressPercentage: "80%"
+      // progressPercentage: "80%"
     },
     {
       Stack: "UI Design",
-      progressPercentage: "90%"
+      // progressPercentage: "90%"
     }
   ],
-  displayCodersrank: true // Set true to display codersrank badges section need to changes your username in src/containers/skillProgress/skillProgress.js:17:62, defaults to false
+  displayCodersrank: false // Set true to display codersrank badges section need to changes your username in src/containers/skillProgress/skillProgress.js:17:62, defaults to false
 };
 
 // Work experience section
