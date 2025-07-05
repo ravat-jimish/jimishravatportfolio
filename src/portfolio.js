@@ -293,6 +293,19 @@ const achievementSection = {
       ]
     },
     {
+      title: "Project Management Office Setup",
+      subtitle:
+        "Certified in setup of PMO.",
+      image: require("./assets/images/udemy.png"),
+      imageAlt: "Udemy Logo",
+      footerLink: [
+        {
+          name: "Certification",
+          url: "https://www.udemy.com/certificate/UC-16dc1358-99ae-447f-8632-29bde85600c5/"
+        }
+      ]
+    },
+    {
       title: "ISO 27001 MERN Stack",
       subtitle:
         "Developed full-feldge E-Commerce Website using MERN stack.",
