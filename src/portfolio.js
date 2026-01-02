@@ -26,19 +26,19 @@ const greeting = {
     "A passionate Full Stack Software Developer having experience in building SaaS applications with ReactJS, Redux, Javascript, NodeJS, MongoDB, Redis and many other tools and libraries."
   ),
   resumeLink:
-    "https://drive.google.com/file/d/1Jk0I3a-89QlCm-HMzutYjuB0MiQoxhIO/view?usp=sharing", // Set to empty to hide the button
+    "https://drive.google.com/file/d/1qiUOs8n4XNTDiXmQ2Y0aeguWXfVzrXRk/view?usp=drive_link", // Set to empty to hide the button
   displayGreeting: true // Set false to hide this section, defaults to true
 };
 
 // Social Media Links
 
 const socialMediaLinks = {
-  github: "https://github.com/ravat-jimish",
+  github: "https://github.com/jimishravat",
   linkedin: "https://www.linkedin.com/in/jimishravat/",
   gmail: "ravat.jimish@gmail.com",
   // gitlab: "https://gitlab.com/saadpasta",
   // facebook: "https://www.facebook.com/saad.pasta7",
-  medium: "https://medium.com/@ravatjimish",
+  medium: "https://medium.com/@jimishravat2802",
   // stackoverflow: "https://stackoverflow.com/users/10422806/saad-pasta",
   // Instagram, Twitter and Kaggle are also supported in the links!
   // To customize icons and social links, tweak src/components/SocialMedia
@@ -51,7 +51,9 @@ const skillsSection = {
   title: "Skills that I have",
   subTitle: "",
   skills: [
-    emoji("⚡ Software-As-A-Service (SaaS) applications from ground to production"),
+    emoji(
+      "⚡ Software-As-A-Service (SaaS) applications from ground to production"
+    ),
     emoji(
       "⚡ Develop highly interactive Front end / User Interfaces for your web and mobile applications"
     ),
@@ -115,7 +117,7 @@ https://fontawesome.com/icons?d=gallery */
     {
       skillName: "Postman",
       fontAwesomeClassname: "fas fa-envelope-open-text"
-    },
+    }
   ],
   display: true // Set false to hide this section, defaults to true
 };
@@ -135,9 +137,9 @@ const educationInfo = {
         "Techincal Lead in Techno-Cultural Fest - Udaan'22",
         "Lead the Computer Society of India - BVM Chapter",
         "Worked on Document Management System using Blockchain and Ganache",
-        "Made a full fledge Student ERP system as a semester project",
+        "Made a full fledge Student ERP system as a semester project"
       ]
-    },
+    }
     // {
     //   schoolName: "Stanford University",
     //   logo: require("./assets/images/stanfordLogo.png"),
@@ -155,15 +157,15 @@ const techStack = {
   viewSkillBars: true, //Set it to true to show Proficiency Section
   experience: [
     {
-      Stack: "React/Redux", //Insert stack or technology you have experience in
+      Stack: "React/Redux" //Insert stack or technology you have experience in
       // progressPercentage: "90%" //Insert relative proficiency in percentage
     },
     {
-      Stack: "Backend - NodeJS",
+      Stack: "Next.js"
       // progressPercentage: "80%"
     },
     {
-      Stack: "UI Design",
+      Stack: "UI Design"
       // progressPercentage: "90%"
     }
   ],
@@ -217,12 +219,14 @@ const openSource = {
 
 const bigProjects = {
   title: "Big Projects",
-  subtitle: "SOME STARTUPS AND FREELANCE CLIENTS THAT I HELPED TO CREATE THEIR TECH",
+  subtitle:
+    "SOME STARTUPS AND FREELANCE CLIENTS THAT I HELPED TO CREATE THEIR TECH",
   projects: [
     {
       image: require("./assets/images/phishing.png"),
       projectName: "Phishing Detection Chrome Extenstion",
-      projectDesc: "Made a phishing detection chrome extension using the Virus Total API for a U.K. based client.",
+      projectDesc:
+        "Made a phishing detection chrome extension using the Virus Total API for a U.K. based client.",
       footerLink: [
         {
           name: "See the Post",
@@ -234,7 +238,8 @@ const bigProjects = {
     {
       image: require("./assets/images/bluesync.jpg"),
       projectName: "Blue Sync Softwares",
-      projectDesc: "Designed and developed a custom website from scratch for a client, delivering a responsive and visually engaging user experience.",
+      projectDesc:
+        "Designed and developed a custom website from scratch for a client, delivering a responsive and visually engaging user experience.",
       footerLink: [
         {
           name: "Visit Website",
@@ -246,7 +251,8 @@ const bigProjects = {
     {
       image: require("./assets/images/realtime.png"),
       projectName: "Real-Time Network Threat Detection",
-      projectDesc: "Designed to defend against DDoS and suspicious activity proactively for a U.K. based client",
+      projectDesc:
+        "Designed to defend against DDoS and suspicious activity proactively for a U.K. based client",
       footerLink: [
         {
           name: "See the Post",
@@ -254,7 +260,7 @@ const bigProjects = {
         }
         //  you can add extra buttons here.
       ]
-    },
+    }
     // {
     //   image: require("./assets/images/nextuLogo.webp"),
     //   projectName: "Nextu",
@@ -275,14 +281,12 @@ const bigProjects = {
 
 const achievementSection = {
   title: emoji("Achievements And Certifications 🏆 "),
-  subtitle:
-    "Achievements & Certifications that I have done !",
+  subtitle: "Achievements & Certifications that I have done !",
 
   achievementsCards: [
     {
       title: "Microsoft Azure",
-      subtitle:
-        "Certified in Azure AI Engineer Associate",
+      subtitle: "Certified in Azure AI Engineer Associate",
       image: require("./assets/images/microsoft.png"),
       imageAlt: "Microsoft Logo",
       footerLink: [
@@ -294,8 +298,7 @@ const achievementSection = {
     },
     {
       title: "Project Management Office Setup",
-      subtitle:
-        "Certified in setup of PMO.",
+      subtitle: "Certified in setup of PMO.",
       image: require("./assets/images/udemy.png"),
       imageAlt: "Udemy Logo",
       footerLink: [
@@ -307,8 +310,7 @@ const achievementSection = {
     },
     {
       title: "ISO 27001 MERN Stack",
-      subtitle:
-        "Developed full-feldge E-Commerce Website using MERN stack.",
+      subtitle: "Developed full-feldge E-Commerce Website using MERN stack.",
       image: require("./assets/images/lco.png"),
       imageAlt: "Learn Code Online",
       footerLink: [
@@ -325,8 +327,10 @@ const achievementSection = {
       image: require("./assets/images/giot.png"),
       imageAlt: "Georgia Institute of Technology Logo",
       footerLink: [
-        { name: "Certification", url: "https://www.coursera.org/account/accomplishments/certificate/K6PLJN2DGS6Z" },
-
+        {
+          name: "Certification",
+          url: "https://www.coursera.org/account/accomplishments/certificate/K6PLJN2DGS6Z"
+        }
       ]
     }
   ],
@@ -354,7 +358,7 @@ const blogSection = {
         "React is a JavaScript library for building User Interface. It is maintained by Facebook and a community of individual developers and companies."
     }
   ],
-  display: false // Set false to hide this section, defaults to true
+  display: true // Set false to hide this section, defaults to true
 };
 
 // Talks Sections
@@ -400,7 +404,8 @@ const resumeSection = {
 
 const contactInfo = {
   title: emoji("Contact Me ☎️"),
-  subtitle: "Discuss a project or just want to say hi? My Inbox is open for all.",
+  subtitle:
+    "Feel free to drop by and say hello.",
   number: "+91-8758885959",
   email_address: "ravat.jimish@gmail.com"
 };
@@ -408,7 +413,7 @@ const contactInfo = {
 // Twitter Section
 
 const twitterDetails = {
-  userName: "twitter", //Replace "twitter" with your twitter username without @
+  userName: "jimishravat", //Replace "twitter" with your twitter username without @
   display: false // Set true to display this section, defaults to false
 };
 

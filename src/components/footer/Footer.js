@@ -12,16 +12,16 @@ export default function Footer() {
         <p className={isDark ? "dark-mode footer-text" : "footer-text"}>
           {emoji("Made with ❤️ by Jimish Ravat")}
         </p>
-        <p className={isDark ? "dark-mode footer-text" : "footer-text"}>
+        {/* <p className={isDark ? "dark-mode footer-text" : "footer-text"}>
           Theme by{" "}
           <a
-            href="https://github.com/ravat-jimish/jimishravatportfolio"
+            href="https://bluesyncsoftwares.com"
             target="_blank"
             rel="noreferrer"
           >
-            jimishravat
+            Blue Sync Softwares
           </a>
-        </p>
+        </p> */}
       </div>
     </Fade>
   );

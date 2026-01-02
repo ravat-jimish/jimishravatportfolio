@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://github.com/ravat-jimish.png" alt="Jimish Ravat Profile Picture" width="150" style="border-radius:50%;">
+  <img src="https://github.com/jimishravat.png" alt="Jimish Ravat Profile Picture" width="150" style="border-radius:50%;">
   <h1>Hi there, I'm Jimish Ravat! 👋</h1>
   <p>A passionate Software Developer crafting innovative solutions and building impactful software.</p>
 </div>
