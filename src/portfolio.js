@@ -23,10 +23,10 @@ const greeting = {
   username: "Jimish Ravat",
   title: "Hey, Jimish here",
   subTitle: emoji(
-    "A passionate Full Stack Software Developer having experience in building SaaS applications with ReactJS, Redux, Javascript, NodeJS, MongoDB, Redis and many other tools and libraries."
+    "I am a Software Developer 🚀 | Tech Enthusiast 💻 | Lifelong Learner 📚"
   ),
   resumeLink:
-    "https://drive.google.com/file/d/1qiUOs8n4XNTDiXmQ2Y0aeguWXfVzrXRk/view?usp=drive_link", // Set to empty to hide the button
+    "https://drive.google.com/file/d/1x-5lUwCBGm4B7IhxL1NM8_h19FyIbBlO/view?usp=sharing", // Set to empty to hide the button
   displayGreeting: true // Set false to hide this section, defaults to true
 };
 
@@ -35,7 +35,7 @@ const greeting = {
 const socialMediaLinks = {
   github: "https://github.com/jimishravat",
   linkedin: "https://www.linkedin.com/in/jimishravat/",
-  gmail: "ravat.jimish@gmail.com",
+  gmail: "jimishravat2802@gmail.com",
   // gitlab: "https://gitlab.com/saadpasta",
   // facebook: "https://www.facebook.com/saad.pasta7",
   medium: "https://medium.com/@jimishravat2802",
@@ -52,13 +52,13 @@ const skillsSection = {
   subTitle: "",
   skills: [
     emoji(
-      "⚡ Software-As-A-Service (SaaS) applications from ground to production"
+      "⚡ Architect and deploy scalable SaaS applications with production-grade infrastructure, ensuring reliability, security, and optimal performance"
     ),
     emoji(
-      "⚡ Develop highly interactive Front end / User Interfaces for your web and mobile applications"
+      "⚡ Create engaging, responsive UX/UI experiences across web and mobile platforms with modern frameworks and accessibility best practices"
     ),
     emoji(
-      "⚡ Integration of third party services such as Twillo / OpenAPI / Cloudinary"
+      "⚡ Seamlessly integrate third-party APIs and services (Twilio, OpenAI, Cloudinary) to extend application functionality and enhance user capabilities"
     )
   ],
 
@@ -157,15 +157,15 @@ const techStack = {
   viewSkillBars: true, //Set it to true to show Proficiency Section
   experience: [
     {
-      Stack: "React/Redux" //Insert stack or technology you have experience in
+      Stack: "React & Redux - State management and scalable applications" //Insert stack or technology you have experience in
       // progressPercentage: "90%" //Insert relative proficiency in percentage
     },
     {
-      Stack: "Next.js"
+      Stack: "Next.js - Full-stack development with SSR and optimization"
       // progressPercentage: "80%"
     },
     {
-      Stack: "UI Design"
+      Stack: "UI/UX Design - Responsive and accessible interfaces"
       // progressPercentage: "90%"
     }
   ],
@@ -178,17 +178,17 @@ const workExperiences = {
   display: true, //Set it to true to show workExperiences Section
   experience: [
     {
-      role: "Software Developer",
+      role: "Frontend Developer",
       company: "Tata Consultancy Services",
       companylogo: require("./assets/images/tcs.png"),
       date: "August 2023 – Present",
-      desc: "Working on Messaging Solution SaaS product for TCS iON.",
+      desc: "Building scalable web communication platform for inhouse product suite",
       descBullets: [
-        "Built a real-time Livechat platform capable of supporting over 100,000 requests per hour and 10,000 concurrent users using WebSockets",
-        "Utilized MySQL with ACID compliance for secure and fault-tolerant data handling in high-traffic environments",
-        "Enhanced system performance by optimizing infrastructure, resulting in a 20% reduction in response times and a 15% increase in throughput",
-        "Collaborated with cross-functional teams in Agile/Scrum environments to drive rapid delivery cycles and continuous integration",
-        "Mentored and trained three junior developers, guiding them in ReactJS, NodeJS, and best coding practices to ensure consistent code quality and team productivity"
+        "Owned the development of a production-grade front-end application using ReactJS & Redux, supporting over 10000 active users across multiple organizations.",
+        "Designed & implemented scalable state management architecture,reducing unnecessary componentre-renders & improving overall UIresponsiveness by 30%.",
+        "Builtreal-time userinterfaces leveraging Web Sockets driven data flows, enabling seamless live updates and significantly improving user experience.",
+        "Optimized application performance through component memoization, lazy loading and efficient API integration,resulting in a 40% increase in user engagement.",
+        "Collaborated with UX designers, backend engineers, and QA teams within Agile methodology to deliverintuitive, accessible, and stable userinterfaces aligned with productrequirements and predictable front-end delivery timelines."
       ]
     },
     {
@@ -196,11 +196,11 @@ const workExperiences = {
       company: "Aerolex Labs",
       companylogo: require("./assets/images/aerolex.png"),
       date: "January 2023 – June 2023",
-      desc: "Worked on Training & Placement Management System",
+      desc: "Developed end to end placement management system for college using MERN stack",
       descBullets: [
-        "Spearheaded full development lifecycle of Training and Placement Cell Management System, enhancing operational efficiency by 60% through automation",
-        "Developed user-specific modules with hierarchical access control for secure, role-based data access",
-        "Collaborated with cross-functional teams to refine features based on stakeholder feedback in an Agile environment",
+        "Built end-to-end placement management system using MERN stack, improving operational efficiency by 60%",
+        "Implemented role-based access control with secure user-specific modules",
+        "Refined features based on stakeholder feedback in Agile environment",
         "Ensured data integrity and secure authentication across all system modules"
       ]
     }
@@ -220,7 +220,7 @@ const openSource = {
 const bigProjects = {
   title: "Big Projects",
   subtitle:
-    "SOME STARTUPS AND FREELANCE CLIENTS THAT I HELPED TO CREATE THEIR TECH",
+    "Delivering innovative technology solutions for startups and freelance clients",
   projects: [
     {
       image: require("./assets/images/phishing.png"),
@@ -404,10 +404,9 @@ const resumeSection = {
 
 const contactInfo = {
   title: emoji("Contact Me ☎️"),
-  subtitle:
-    "Feel free to drop by and say hello.",
+  subtitle: "Feel free to drop by and say hello.",
   number: "+91-8758885959",
-  email_address: "ravat.jimish@gmail.com"
+  email_address: "jimishravat2802@gmail.com"
 };
 
 // Twitter Section
