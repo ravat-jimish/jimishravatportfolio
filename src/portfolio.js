@@ -207,12 +207,16 @@ const workExperiences = {
       date: "August 2023 – Present",
       desc: "Building scalable web communication platform for inhouse product suite",
       descBullets: [
-        "Owned the development of a production-grade front-end application using ReactJS & Redux, supporting over 10000 active users across multiple organizations.",
-        "Designed & implemented scalable state management architecture,reducing unnecessary componentre-renders & improving overall UIresponsiveness by 30%.",
-        "Builtreal-time userinterfaces leveraging Web Sockets driven data flows, enabling seamless live updates and significantly improving user experience.",
-        "Optimized application performance through component memoization, lazy loading and efficient API integration,resulting in a 40% increase in user engagement.",
-        "Collaborated with UX designers, backend engineers, and QA teams within Agile methodology to deliverintuitive, accessible, and stable userinterfaces aligned with productrequirements and predictable front-end delivery timelines."
-      ]
+  "Designed and developed an enterprise-grade real-time chat platform using ReactJS, Redux, Spring Boot, and WebSockets, supporting 5,000+ active users across multiple organizations.",
+  
+  "Built scalable and optimized frontend architecture with efficient Redux state management, reducing unnecessary component re-renders and improving page load performance by 30%.",
+  
+  "Implemented real-time communication workflows using WebSockets and distributed backend communication through Hazelcast, enabling seamless live messaging and low-latency event delivery.",
+  
+  "Developed secure and resilient application flows integrated with JWT authentication, REST APIs, retry mechanisms, and asynchronous queue-based batch processing for high-performance message handling.",
+  
+  "Collaborated within Agile teams alongside backend engineers, QA teams, and stakeholders to deliver scalable, secure, and production-grade enterprise applications with high operational stability and CI/CD-driven deployments."
+]
     },
     {
       role: "Jr. Web Developer",
