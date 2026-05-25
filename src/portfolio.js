@@ -65,59 +65,83 @@ const skillsSection = {
 https://fontawesome.com/icons?d=gallery */
 
   softwareSkills: [
-    {
-      skillName: "html-5",
-      fontAwesomeClassname: "fab fa-html5"
-    },
-    {
-      skillName: "css3",
-      fontAwesomeClassname: "fab fa-css3-alt"
-    },
-    {
-      skillName: "JavaScript",
-      fontAwesomeClassname: "fab fa-js"
-    },
-    {
-      skillName: "reactjs",
-      fontAwesomeClassname: "fab fa-react"
-    },
-    {
-      skillName: "nodejs",
-      fontAwesomeClassname: "fab fa-node"
-    },
-    {
-      skillName: "npm",
-      fontAwesomeClassname: "fab fa-npm"
-    },
-    {
-      skillName: "sql-database",
-      fontAwesomeClassname: "fas fa-database"
-    },
-    {
-      skillName: "Redux",
-      fontAwesomeClassname: "fab fa-react"
-    },
-    {
-      skillName: "Mongodb",
-      fontAwesomeClassname: "fas fa-database"
-    },
-    {
-      skillName: "Postgres",
-      fontAwesomeClassname: "fas fa-fire"
-    },
-    {
-      skillName: "python",
-      fontAwesomeClassname: "fab fa-python"
-    },
-    {
-      skillName: "Github",
-      fontAwesomeClassname: "fab fa-github"
-    },
-    {
-      skillName: "Postman",
-      fontAwesomeClassname: "fas fa-envelope-open-text"
-    }
-  ],
+  {
+    skillName: "HTML5",
+    fontAwesomeClassname: "fab fa-html5"
+  },
+  {
+    skillName: "CSS3",
+    fontAwesomeClassname: "fab fa-css3-alt"
+  },
+  {
+    skillName: "JavaScript",
+    fontAwesomeClassname: "fab fa-js"
+  },
+  {
+    skillName: "TypeScript",
+    fontAwesomeClassname: "fas fa-code"
+  },
+  {
+    skillName: "ReactJS",
+    fontAwesomeClassname: "fab fa-react"
+  },
+  {
+    skillName: "NextJS",
+    fontAwesomeClassname: "fas fa-code"
+  },
+  {
+    skillName: "Redux",
+    fontAwesomeClassname: "fas fa-code-branch"
+  },
+  {
+    skillName: "Java",
+    fontAwesomeClassname: "fab fa-java"
+  },
+  {
+    skillName: "Spring Boot",
+    fontAwesomeClassname: "fas fa-leaf"
+  },
+  {
+    skillName: "Python",
+    fontAwesomeClassname: "fab fa-python"
+  },
+  {
+    skillName: "PostgreSQL",
+    fontAwesomeClassname: "fas fa-database"
+  },
+  {
+    skillName: "MySQL",
+    fontAwesomeClassname: "fas fa-database"
+  },
+  {
+    skillName: "REST APIs",
+    fontAwesomeClassname: "fas fa-plug"
+  },
+  {
+    skillName: "WebSockets",
+    fontAwesomeClassname: "fas fa-exchange-alt"
+  },
+  {
+    skillName: "AWS",
+    fontAwesomeClassname: "fab fa-aws"
+  },
+  {
+    skillName: "Jenkins",
+    fontAwesomeClassname: "fab fa-jenkins"
+  },
+  {
+    skillName: "GitHub",
+    fontAwesomeClassname: "fab fa-github"
+  },
+  {
+    skillName: "Postman",
+    fontAwesomeClassname: "fas fa-paper-plane"
+  },
+  {
+    skillName: "OpenAI",
+    fontAwesomeClassname: "fas fa-robot"
+  }
+],
   display: true // Set false to hide this section, defaults to true
 };
 
