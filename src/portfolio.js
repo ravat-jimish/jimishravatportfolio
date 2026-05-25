@@ -23,7 +23,7 @@ const greeting = {
   username: "Jimish Ravat",
   title: "Hey, Jimish here",
   subTitle: emoji(
-    "I am a Software Developer 🚀 | Tech Enthusiast 💻 | Lifelong Learner 📚"
+    "I am a Full Stack Developer 🚀 | Tech Enthusiast 💻 | Lifelong Learner 📚"
   ),
   resumeLink:
     "https://drive.google.com/file/d/1x-5lUwCBGm4B7IhxL1NM8_h19FyIbBlO/view?usp=sharing", // Set to empty to hide the button
