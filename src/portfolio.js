@@ -161,11 +161,11 @@ const techStack = {
       // progressPercentage: "90%" //Insert relative proficiency in percentage
     },
     {
-      Stack: "Next.js - Full-stack development with SSR and optimization"
+      Stack: "Java Enterprise Edition - Springboot"
       // progressPercentage: "80%"
     },
     {
-      Stack: "UI/UX Design - Responsive and accessible interfaces"
+      Stack: "Gen AI - RAG"
       // progressPercentage: "90%"
     }
   ],
@@ -178,7 +178,7 @@ const workExperiences = {
   display: true, //Set it to true to show workExperiences Section
   experience: [
     {
-      role: "Frontend Developer",
+      role: "Java Full Stack Developer",
       company: "Tata Consultancy Services",
       companylogo: require("./assets/images/tcs.png"),
       date: "August 2023 – Present",
