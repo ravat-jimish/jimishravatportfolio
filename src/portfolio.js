@@ -51,17 +51,16 @@ const skillsSection = {
   title: "Skills that I have",
   subTitle: "",
   skills: [
-    emoji(
-      "⚡ Architect and deploy scalable SaaS applications with production-grade infrastructure, ensuring reliability, security, and optimal performance"
-    ),
-    emoji(
-      "⚡ Create engaging, responsive UX/UI experiences across web and mobile platforms with modern frameworks and accessibility best practices"
-    ),
-    emoji(
-      "⚡ Seamlessly integrate third-party APIs and services (Twilio, OpenAI, Cloudinary) to extend application functionality and enhance user capabilities"
-    )
-  ],
-
+  emoji(
+    "⚡ Design and develop scalable enterprise-grade web applications using Spring Boot, React.js, WebSockets, and distributed system architectures"
+  ),
+  emoji(
+    "⚡ Build high-performance, responsive frontend experiences with optimized state management, real-time communication, and modern UI engineering practices"
+  ),
+  emoji(
+    "⚡ Implement secure backend systems with JWT authentication, REST APIs, CI/CD pipelines, database optimization, and cloud-integrated solutions"
+  )
+],
   /* Make Sure to include correct Font Awesome Classname to view your icon
 https://fontawesome.com/icons?d=gallery */
 
