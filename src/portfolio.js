@@ -23,7 +23,7 @@ const greeting = {
   username: "Jimish Ravat",
   title: "Hey, Jimish here",
   subTitle: emoji(
-    "I am a Full Stack Developer 🚀 | Tech Enthusiast 💻 | Lifelong Learner 📚"
+    "📊 Senior Analyst || 🤖 GenAI Developer || 📚 Life Long Learner"
   ),
   resumeLink:
     "https://drive.google.com/file/d/1x-5lUwCBGm4B7IhxL1NM8_h19FyIbBlO/view?usp=sharing", // Set to empty to hide the button
@@ -201,11 +201,11 @@ const workExperiences = {
   display: true, //Set it to true to show workExperiences Section
   experience: [
     {
-      role: "Java Full Stack Developer",
-      company: "Tata Consultancy Services",
-      companylogo: require("./assets/images/tcs.png"),
-      date: "August 2023 – Present",
-      desc: "Building scalable web communication platform for inhouse product suite",
+      role: "Senior Analyst",
+      company: "Accenture",
+      companylogo: require("./assets/images/accenturelogo.png"),
+      date: "Sept 2026 – Present",
+      desc: "Migration of legacy monolithic application to microservices architecture using Spring Boot, React.js, and AWS cloud services",
       descBullets: [
   "Designed and developed an enterprise-grade real-time chat platform using ReactJS, Redux, Spring Boot, and WebSockets, supporting 5,000+ active users across multiple organizations.",
   
@@ -219,18 +219,36 @@ const workExperiences = {
 ]
     },
     {
-      role: "Jr. Web Developer",
-      company: "Aerolex Labs",
-      companylogo: require("./assets/images/aerolex.png"),
-      date: "January 2023 – June 2023",
-      desc: "Developed end to end placement management system for college using MERN stack",
+      role: "Java Full Stack Developer",
+      company: "Tata Consultancy Services",
+      companylogo: require("./assets/images/tcs.png"),
+      date: "August 2023 – August 2026",
+      desc: "Building scalable web communication platform for inhouse product suite",
       descBullets: [
-        "Built end-to-end placement management system using MERN stack, improving operational efficiency by 60%",
-        "Implemented role-based access control with secure user-specific modules",
-        "Refined features based on stakeholder feedback in Agile environment",
-        "Ensured data integrity and secure authentication across all system modules"
-      ]
-    }
+  "Designed and developed an enterprise-grade real-time chat platform using ReactJS, Redux, Spring Boot, and WebSockets, supporting 5,000+ active users across multiple organizations.",
+  
+  "Built scalable and optimized frontend architecture with efficient Redux state management, reducing unnecessary component re-renders and improving page load performance by 30%.",
+  
+  "Implemented real-time communication workflows using WebSockets and distributed backend communication through Hazelcast, enabling seamless live messaging and low-latency event delivery.",
+  
+  "Developed secure and resilient application flows integrated with JWT authentication, REST APIs, retry mechanisms, and asynchronous queue-based batch processing for high-performance message handling.",
+  
+  "Collaborated within Agile teams alongside backend engineers, QA teams, and stakeholders to deliver scalable, secure, and production-grade enterprise applications with high operational stability and CI/CD-driven deployments."
+]
+    },
+    // {
+    //   role: "Jr. Web Developer",
+    //   company: "Aerolex Labs",
+    //   companylogo: require("./assets/images/aerolex.png"),
+    //   date: "January 2023 – June 2023",
+    //   desc: "Developed end to end placement management system for college using MERN stack",
+    //   descBullets: [
+    //     "Built end-to-end placement management system using MERN stack, improving operational efficiency by 60%",
+    //     "Implemented role-based access control with secure user-specific modules",
+    //     "Refined features based on stakeholder feedback in Agile environment",
+    //     "Ensured data integrity and secure authentication across all system modules"
+    //   ]
+    // }
   ]
 };
 

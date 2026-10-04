@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "slug": "building-products-that-stay-useful",
+    "markdownPath": "/blogHome/MD_FILES/building-products-that-stay-useful.md",
+    "tag": "Development",
+    "date": "2025-03-08",
+    "dateLabel": "March 8, 2025",
+    "title": "Building products that stay useful after launch",
+    "description": "A practical look at the small engineering and product decisions that help software remain clear, dependable, and easy to evolve.",
+    "image": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1200&q=80",
+    "imageAlt": "Laptop showing a web development workspace"
+  },
+  {
+    "id": 2,
+    "slug": "design-systems-are-conversations",
+    "markdownPath": "/blogHome/MD_FILES/design-systems-are-conversations.md",
+    "tag": "Design",
+    "date": "2025-02-21",
+    "dateLabel": "February 21, 2025",
+    "title": "Design systems are conversations, not libraries",
+    "description": "Tokens and components matter, but the shared language between design and engineering is what makes a system last.",
+    "image": "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=900&q=80",
+    "imageAlt": "Designer arranging color swatches and notes"
+  },
+  {
+    "id": 3,
+    "slug": "working-across-the-stack",
+    "markdownPath": "/blogHome/MD_FILES/working-across-the-stack.md",
+    "tag": "Career",
+    "date": "2025-01-14",
+    "dateLabel": "January 14, 2025",
+    "title": "What I learned from working across the stack",
+    "description": "Moving between interfaces, APIs, and people changed how I think about ownership, communication, and technical trade-offs.",
+    "image": "https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=900&q=80",
+    "imageAlt": "Team collaborating around a table"
+  },
+  {
+    "id": 4,
+    "slug": "simplest-architecture-that-can-grow",
+    "markdownPath": "/blogHome/MD_FILES/simplest-architecture-that-can-grow.md",
+    "tag": "Development",
+    "date": "2024-12-03",
+    "dateLabel": "December 3, 2024",
+    "title": "Choosing the simplest architecture that can grow",
+    "description": "Complexity is easy to add and hard to remove. Here is how I evaluate the next abstraction before reaching for it.",
+    "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=900&q=80",
+    "imageAlt": "Close-up of a circuit board"
+  },
+  {
+    "id": 5,
+    "slug": "quiet-power-of-a-well-shaped-workflow",
+    "markdownPath": "/blogHome/MD_FILES/quiet-power-of-a-well-shaped-workflow.md",
+    "tag": "Product",
+    "date": "2024-11-18",
+    "dateLabel": "November 18, 2024",
+    "title": "The quiet power of a well-shaped workflow",
+    "description": "Good tools reduce decisions at the right moments. These are the patterns I use to make everyday product flows feel lighter.",
+    "image": "https://images.unsplash.com/photo-1551434678-e076c223a692?w=900&q=80",
+    "imageAlt": "People working together in an office"
+  },
+  {
+    "id": 6,
+    "slug": "dark-mode-is-a-systems-problem",
+    "markdownPath": "/blogHome/MD_FILES/dark-mode-is-a-systems-problem.md",
+    "tag": "Development",
+    "date": "2024-10-30",
+    "dateLabel": "October 30, 2024",
+    "title": "Dark mode is a systems problem",
+    "description": "Beyond swapping colors, a thoughtful dark theme needs hierarchy, contrast, state design, and a careful eye for context.",
+    "image": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=900&q=80",
+    "imageAlt": "Laptop and monitor on a dark desk"
+  },
+  {
+    "id": 7,
+    "slug": "learning-in-public-without-losing-focus",
+    "markdownPath": "/blogHome/MD_FILES/learning-in-public-without-losing-focus.md",
+    "tag": "Career",
+    "date": "2024-09-12",
+    "dateLabel": "September 12, 2024",
+    "title": "Learning in public without losing focus",
+    "description": "A few habits that help turn experiments, notes, and conversations into a body of work with a clear point of view.",
+    "image": "https://images.unsplash.com/photo-1456324504439-367cee3b3c32?w=900&q=80",
+    "imageAlt": "Open notebook beside a laptop"
+  },
+  {
+    "id": 8,
+    "slug": "a-better-brief-makes-better-software",
+    "markdownPath": "/blogHome/MD_FILES/a-better-brief-makes-better-software.md",
+    "tag": "Product",
+    "date": "2024-08-26",
+    "dateLabel": "August 26, 2024",
+    "title": "A better brief makes better software",
+    "description": "The questions I ask before implementation starts, and why clarity at the beginning saves more time than speed at the end.",
+    "image": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=900&q=80",
+    "imageAlt": "Notebook and planning documents on a desk"
+  },
+  {
+    "id": 9,
+    "slug": "designing-after-the-happy-path",
+    "markdownPath": "/blogHome/MD_FILES/designing-after-the-happy-path.md",
+    "tag": "Design",
+    "date": "2024-07-11",
+    "dateLabel": "July 11, 2024",
+    "title": "Designing for the moment after the happy path",
+    "description": "Empty states, errors, and slow networks are where product quality becomes visible. Here is how I design for them first.",
+    "image": "https://images.unsplash.com/photo-1558655146-d09347e92766?w=900&q=80",
+    "imageAlt": "Colorful interface sketches on a desk"
+  },
+  {
+    "id": 10,
+    "slug": "maintenance-work-users-never-see",
+    "markdownPath": "/blogHome/MD_FILES/maintenance-work-users-never-see.md",
+    "tag": "Development",
+    "date": "2024-06-04",
+    "dateLabel": "June 4, 2024",
+    "title": "The maintenance work users never see",
+    "description": "Refactoring, observability, and documentation are quiet investments that keep a product pleasant for everyone over time.",
+    "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=900&q=80",
+    "imageAlt": "Code editor on a laptop screen"
+  }
+]

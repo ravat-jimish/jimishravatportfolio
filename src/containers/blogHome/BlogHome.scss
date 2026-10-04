@@ -1,0 +1,252 @@
+@import "../../_globalColor";
+
+.blog-home {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 96px 32px 110px;
+  color: $textColor;
+}
+
+.blog-home-dark {
+  color: $textColorDark;
+}
+
+.blog-home-intro {
+  max-width: 760px;
+  margin-bottom: 42px;
+}
+
+.blog-home-kicker {
+  color: $buttonColor;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  margin: 0 0 14px;
+  text-transform: uppercase;
+}
+
+.blog-home-intro h1 {
+  font-size: clamp(3.2rem, 7vw, 5.8rem);
+  font-weight: 700;
+  line-height: 0.98;
+  margin: 0;
+}
+
+.blog-home-quote {
+  color: $subTitle;
+  font-size: 1.2rem;
+  line-height: 1.65;
+  margin: 25px 0 0;
+  max-width: 620px;
+}
+
+.blog-filter {
+  border-bottom: 1px solid $lightBorder1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 42px;
+  padding-bottom: 18px;
+}
+
+.blog-filter button,
+.blog-pagination button {
+  background: transparent;
+  border: 1px solid $lightBorder1;
+  border-radius: 999px;
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
+  padding: 9px 17px;
+  transition: 0.2s ease;
+}
+
+.blog-filter button:hover,
+.blog-filter-active {
+  background: $buttonColor !important;
+  border-color: $buttonColor !important;
+  color: $textColorDark !important;
+}
+
+.blog-featured {
+  background: $lightBackground1;
+  box-shadow: 0 18px 50px $lightBoxShadow;
+  display: grid;
+  grid-template-columns: 40% 60%;
+  margin-bottom: 56px;
+  overflow: hidden;
+}
+
+.blog-home-dark .blog-featured,
+.blog-home-dark .blog-tile {
+  background: rgba(255, 255, 255, 0.06);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.18);
+}
+
+.blog-featured-image-wrap {
+  min-height: 360px;
+}
+
+.blog-featured img,
+.blog-tile > img {
+  display: block;
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+
+.blog-featured-content {
+  align-self: center;
+  padding: 48px 56px;
+}
+
+.blog-meta {
+  align-items: center;
+  color: $subTitle;
+  display: flex;
+  font-size: 0.78rem;
+  gap: 14px;
+  text-transform: uppercase;
+}
+
+.blog-meta span {
+  color: $buttonColor;
+  font-weight: 700;
+}
+
+.blog-featured h2,
+.blog-tile h2 {
+  color: inherit;
+  line-height: 1.15;
+  margin: 18px 0 14px;
+}
+
+.blog-featured h2 {
+  font-size: 2.25rem;
+}
+
+.blog-featured p,
+.blog-tile p {
+  color: $subTitle;
+  line-height: 1.65;
+  margin: 0 0 25px;
+}
+
+.blog-featured a,
+.blog-tile a {
+  color: $buttonColor;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.blog-featured a:hover,
+.blog-tile a:hover {
+  color: $buttonHover;
+}
+
+.blog-grid {
+  display: grid;
+  gap: 28px;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.blog-tile {
+  background: $lightBackground1;
+  box-shadow: 0 10px 30px $lightBoxShadow;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.blog-tile > img {
+  aspect-ratio: 16 / 10;
+}
+
+.blog-tile-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 25px 24px 28px;
+}
+
+.blog-tile h2 {
+  font-size: 1.3rem;
+}
+
+.blog-tile p {
+  font-size: 0.96rem;
+}
+
+.blog-tile a {
+  margin-top: auto;
+}
+
+.blog-pagination {
+  align-items: center;
+  display: flex;
+  gap: 18px;
+  justify-content: center;
+  margin-top: 58px;
+}
+
+.blog-pagination button {
+  border-radius: 50%;
+  font-size: 1.15rem;
+  height: 42px;
+  padding: 0;
+  width: 42px;
+}
+
+.blog-pagination button:not(:disabled):hover {
+  background: $buttonColor;
+  border-color: $buttonColor;
+  color: $textColorDark;
+}
+
+.blog-pagination button:disabled {
+  cursor: not-allowed;
+  opacity: 0.35;
+}
+
+.blog-pagination i {
+  color: $subTitle;
+  font-style: normal;
+  margin: 0 4px;
+}
+
+@media (max-width: 850px) {
+  .blog-featured {
+    grid-template-columns: 1fr;
+  }
+
+  .blog-featured-image-wrap {
+    min-height: 280px;
+  }
+
+  .blog-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .blog-home {
+    padding: 62px 20px 78px;
+  }
+
+  .blog-home-intro h1 {
+    font-size: 3.2rem;
+  }
+
+  .blog-featured-content {
+    padding: 32px 25px 38px;
+  }
+
+  .blog-featured h2 {
+    font-size: 1.8rem;
+  }
+
+  .blog-grid {
+    grid-template-columns: 1fr;
+  }
+}

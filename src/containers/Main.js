@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from "react";
+import {Route, Switch} from "react-router-dom";
 import Header from "../components/header/Header";
 import Greeting from "./greeting/Greeting";
 import Skills from "./skills/Skills";
@@ -15,6 +16,9 @@ import Education from "./education/Education";
 import ScrollToTopButton from "./topbutton/Top";
 import Twitter from "./twitter-embed/twitter";
 import Profile from "./profile/Profile";
+import BlogHome from "./blogHome/BlogHome";
+import BlogArticle from "./blogHome/BlogArticle";
+import BlogRouteTransition from "./blogHome/BlogRouteTransition";
 import SplashScreen from "./splashScreen/SplashScreen";
 import {splashScreen} from "../portfolio";
 import {StyleProvider} from "../contexts/StyleContext";
@@ -51,19 +55,33 @@ const Main = () => {
         ) : (
           <>
             <Header />
-            <Greeting />
-            <Skills />
-            <StackProgress />
-            <Education />
-            <WorkExperience />
-            <Projects />
-            <StartupProject />
-            <Achievement />
-            <Blogs />
-            <Talks />
-            <Twitter />
-            <Podcast />
-            <Profile />
+            <Switch>
+              <Route exact path="/">
+                <Greeting />
+                <Skills />
+                <StackProgress />
+                <Education />
+                <WorkExperience />
+                <Projects />
+                <StartupProject />
+                <Achievement />
+                <Blogs />
+                <Talks />
+                <Twitter />
+                <Podcast />
+                <Profile />
+              </Route>
+              <Route exact path="/blog/:slug">
+                <BlogRouteTransition>
+                  <BlogArticle />
+                </BlogRouteTransition>
+              </Route>
+              <Route exact path="/blog">
+                <BlogRouteTransition>
+                  <BlogHome />
+                </BlogRouteTransition>
+              </Route>
+            </Switch>
             <Footer />
             <ScrollToTopButton />
           </>

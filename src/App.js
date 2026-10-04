@@ -1,12 +1,13 @@
 import React from "react";
+import {BrowserRouter} from "react-router-dom";
 import "./App.scss";
 import Main from "./containers/Main";
 
 function App() {
   return (
-    <div>
+    <BrowserRouter>
       <Main />
-    </div>
+    </BrowserRouter>
   );
 }
 
