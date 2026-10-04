@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, {useContext, useEffect, useState} from "react";
 import {Redirect, Route, Switch, useLocation, useParams} from "react-router-dom";
 import Header from "../components/header/Header";
 import Greeting from "./greeting/Greeting";
@@ -24,16 +24,10 @@ import blogData from "./blogHome/blogData.json";
 import SplashScreen from "./splashScreen/SplashScreen";
 import {splashScreen} from "../portfolio";
 import {StyleProvider} from "../contexts/StyleContext";
+import AppConfigContext from "../contexts/appConfig/AppConfigContext";
 import {useLocalStorage} from "../hooks/useLocalStorage";
 import HelperPage from "./helperPages/HelperPage";
 import "./Main.scss";
-
-const maintenanceRoutes = ["/blog"];
-
-const isRouteUnderMaintenance = pathname =>
-  maintenanceRoutes.some(
-    route => pathname === route || pathname.startsWith(`${route}/`)
-  );
 
 const PrivateAwareBlogArticle = () => {
   const {slug} = useParams();
@@ -45,6 +39,7 @@ const PrivateAwareBlogArticle = () => {
 };
 
 const Main = () => {
+  const {isPathUnderMaintenance} = useContext(AppConfigContext);
   const location = useLocation();
   const darkPref = window.matchMedia("(prefers-color-scheme: dark)");
   const [isDark, setIsDark] = useLocalStorage("isDark", darkPref.matches);
@@ -52,7 +47,7 @@ const Main = () => {
     useState(true);
   const shouldRedirectToMaintenance =
     location.pathname !== "/maintenance" &&
-    isRouteUnderMaintenance(location.pathname);
+    isPathUnderMaintenance(location.pathname);
 
   useEffect(() => {
     if (splashScreen.enabled) {
