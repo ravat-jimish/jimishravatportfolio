@@ -10,6 +10,12 @@ export default function BlogRouteTransition({children}) {
   const isReplayingClick = useRef(false);
 
   useEffect(() => {
+    scrollToTop();
+    setIsTransitioning(true);
+    transitionTimer.current = setTimeout(() => {
+      setIsTransitioning(false);
+    }, 1000);
+
     return () => clearTimeout(transitionTimer.current);
   }, []);
 
@@ -31,6 +37,11 @@ export default function BlogRouteTransition({children}) {
     const isInsideTransition = interactiveElement
       ? event.currentTarget.contains(interactiveElement)
       : false;
+
+    if (!isInsideTransition) {
+      return;
+    }
+
     const linkPath = isInsideTransition
       ? interactiveElement.getAttribute("href")
       : null;

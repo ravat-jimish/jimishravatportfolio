@@ -2,6 +2,7 @@ import React, {useContext, useEffect, useState} from "react";
 import {Link, useParams} from "react-router-dom";
 import ReactMarkdown from "react-markdown";
 import StyleContext from "../../contexts/StyleContext";
+import {withAccessContent} from "../../components/accessContent/AccessContent";
 import blogData from "./blogData.json";
 import "./BlogArticle.scss";
 
@@ -96,3 +97,5 @@ export default function BlogArticle() {
     </main>
   );
 }
+
+export const AccessControlledBlogArticle = withAccessContent(BlogArticle);

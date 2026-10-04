@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import {Route, Switch} from "react-router-dom";
+import {Redirect, Route, Switch, useLocation, useParams} from "react-router-dom";
 import Header from "../components/header/Header";
 import Greeting from "./greeting/Greeting";
 import Skills from "./skills/Skills";
@@ -17,19 +17,42 @@ import ScrollToTopButton from "./topbutton/Top";
 import Twitter from "./twitter-embed/twitter";
 import Profile from "./profile/Profile";
 import BlogHome from "./blogHome/BlogHome";
-import BlogArticle from "./blogHome/BlogArticle";
+import {AccessControlledBlogArticle} from "./blogHome/BlogArticle";
 import BlogRouteTransition from "./blogHome/BlogRouteTransition";
+import AccessContent from "../components/accessContent/AccessContent";
+import blogData from "./blogHome/blogData.json";
 import SplashScreen from "./splashScreen/SplashScreen";
 import {splashScreen} from "../portfolio";
 import {StyleProvider} from "../contexts/StyleContext";
 import {useLocalStorage} from "../hooks/useLocalStorage";
+import HelperPage from "./helperPages/HelperPage";
 import "./Main.scss";
 
+const maintenanceRoutes = ["/blog"];
+
+const isRouteUnderMaintenance = pathname =>
+  maintenanceRoutes.some(
+    route => pathname === route || pathname.startsWith(`${route}/`)
+  );
+
+const PrivateAwareBlogArticle = () => {
+  const {slug} = useParams();
+  const blog = blogData.find(article => article.slug === slug);
+
+  return (
+    <AccessControlledBlogArticle isPrivate={Boolean(blog && blog.isPrivate)} />
+  );
+};
+
 const Main = () => {
+  const location = useLocation();
   const darkPref = window.matchMedia("(prefers-color-scheme: dark)");
   const [isDark, setIsDark] = useLocalStorage("isDark", darkPref.matches);
   const [isShowingSplashAnimation, setIsShowingSplashAnimation] =
     useState(true);
+  const shouldRedirectToMaintenance =
+    location.pathname !== "/maintenance" &&
+    isRouteUnderMaintenance(location.pathname);
 
   useEffect(() => {
     if (splashScreen.enabled) {
@@ -55,33 +78,53 @@ const Main = () => {
         ) : (
           <>
             <Header />
-            <Switch>
-              <Route exact path="/">
-                <Greeting />
-                <Skills />
-                <StackProgress />
-                <Education />
-                <WorkExperience />
-                <Projects />
-                <StartupProject />
-                <Achievement />
-                <Blogs />
-                <Talks />
-                <Twitter />
-                <Podcast />
-                <Profile />
-              </Route>
-              <Route exact path="/blog/:slug">
-                <BlogRouteTransition>
-                  <BlogArticle />
-                </BlogRouteTransition>
-              </Route>
-              <Route exact path="/blog">
-                <BlogRouteTransition>
-                  <BlogHome />
-                </BlogRouteTransition>
-              </Route>
-            </Switch>
+            {shouldRedirectToMaintenance ? (
+              <Redirect to="/maintenance" />
+            ) : (
+              <Switch>
+                <Route exact path="/">
+                  <Greeting />
+                  <Skills />
+                  <StackProgress />
+                  <Education />
+                  <WorkExperience />
+                  <Projects />
+                  <StartupProject />
+                  <Achievement />
+                  <Blogs />
+                  <Talks />
+                  <Twitter />
+                  <Podcast />
+                  <Profile />
+                </Route>
+                <Route exact path="/accessContent">
+                  <AccessContent />
+                </Route>
+                <Route exact path="/blog/:slug">
+                  <BlogRouteTransition>
+                    <PrivateAwareBlogArticle />
+                  </BlogRouteTransition>
+                </Route>
+                <Route exact path="/blog">
+                  <BlogRouteTransition>
+                    <BlogHome />
+                  </BlogRouteTransition>
+                </Route>
+                <Route exact path="/unauthorized">
+                  <HelperPage page="unauthorized" />
+                </Route>
+                <Route exact path="/not-found">
+                  <HelperPage page="notFound" />
+                </Route>
+                <Route exact path="/coming-soon">
+                  <HelperPage page="comingSoon" />
+                </Route>
+                <Route exact path="/maintenance">
+                  <HelperPage page="maintenance" />
+                </Route>
+                <Redirect to="/not-found" />
+              </Switch>
+            )}
             <Footer />
             <ScrollToTopButton />
           </>

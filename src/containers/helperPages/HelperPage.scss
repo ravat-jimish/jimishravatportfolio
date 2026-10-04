@@ -1,0 +1,92 @@
+@import "../../_globalColor";
+
+.helper-page {
+  align-items: center;
+  display: flex;
+  gap: 8vw;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: 1180px;
+  min-height: 68vh;
+  padding: 72px 8%;
+}
+
+.helper-page-content {
+  max-width: 540px;
+}
+
+.helper-page-eyebrow {
+  color: $buttonColor;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  margin: 0 0 20px;
+  text-transform: uppercase;
+}
+
+.helper-page h1 {
+  color: $titleColor;
+  font-size: clamp(2.4rem, 5vw, 4.8rem);
+  line-height: 1.08;
+  margin: 0;
+}
+
+.helper-page-description {
+  color: $cardSubtitle;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  margin: 28px 0 0;
+  max-width: 500px;
+}
+
+.helper-page-button {
+  background-color: $buttonColor;
+  border: 1px solid $buttonColor;
+  border-radius: 6px;
+  color: $textColorDark;
+  display: inline-block;
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin-top: 32px;
+  padding: 13px 22px;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.helper-page-button:hover {
+  background-color: $darkBoxShadow2;
+  color: $buttonColor;
+  transform: translateY(-3px);
+}
+
+.helper-page-illustration {
+  flex: 0 1 390px;
+  min-width: 260px;
+}
+
+.dark-mode .helper-page h1 {
+  color: $textColorDark;
+}
+
+.dark-mode .helper-page-description {
+  color: #c5c8ce;
+}
+
+@media (max-width: 768px) {
+  .helper-page {
+    flex-direction: column-reverse;
+    gap: 8px;
+    min-height: 72vh;
+    padding: 48px 24px 72px;
+    text-align: center;
+  }
+
+  .helper-page-illustration {
+    max-width: 300px;
+    min-width: 0;
+  }
+
+  .helper-page-description {
+    font-size: 0.98rem;
+  }
+}

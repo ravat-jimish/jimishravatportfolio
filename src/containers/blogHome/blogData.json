@@ -9,7 +9,8 @@
     "title": "Building products that stay useful after launch",
     "description": "A practical look at the small engineering and product decisions that help software remain clear, dependable, and easy to evolve.",
     "image": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1200&q=80",
-    "imageAlt": "Laptop showing a web development workspace"
+    "imageAlt": "Laptop showing a web development workspace",
+    "isPrivate": true
   },
   {
     "id": 2,

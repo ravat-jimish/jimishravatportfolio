@@ -1,0 +1,76 @@
+@import "../../_globalColor";
+
+.access-content {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  min-height: 65vh;
+  padding: 72px 20px 110px;
+}
+
+.access-content-panel {
+  background: $lightBackground1;
+  max-width: 460px;
+  padding: 42px;
+  width: 100%;
+}
+
+.access-content-kicker {
+  color: $buttonColor;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  margin: 0 0 14px;
+  text-transform: uppercase;
+}
+
+.access-content h1 {
+  margin: 0 0 14px;
+}
+
+.access-content-intro {
+  color: $subTitle;
+  line-height: 1.6;
+  margin: 0 0 30px;
+}
+
+.access-content form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.access-content label {
+  font-weight: 700;
+  margin-top: 8px;
+}
+
+.access-content input {
+  border: 1px solid $lightBorder1;
+  box-sizing: border-box;
+  font: inherit;
+  padding: 12px;
+  width: 100%;
+}
+
+.access-content button {
+  background: $buttonColor;
+  border: 0;
+  color: $textColorDark;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 700;
+  margin-top: 18px;
+  padding: 13px 18px;
+}
+
+.access-content-error {
+  color: #b42318;
+  margin: 8px 0 0;
+}
+
+@media (max-width: 520px) {
+  .access-content-panel {
+    padding: 30px 24px;
+  }
+}
