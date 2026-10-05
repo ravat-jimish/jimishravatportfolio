@@ -451,7 +451,7 @@ const contactInfo = {
   title: emoji("Contact Me ☎️"),
   subtitle: "Feel free to drop by and say hello.",
   number: "+91-8758885959",
-  email_address: "jimishravat2802@gmail.com"
+  email_address: "contact@jimishravat.in"
 };
 
 // Twitter Section
