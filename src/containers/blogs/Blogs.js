@@ -1,20 +1,21 @@
-import React, {useContext, useState} from "react";
+import React, {useContext, useEffect, useState} from "react";
 import Fade from "react-reveal/Fade";
 import {Link} from "react-router-dom";
 import {blogSection} from "../../portfolio";
 import StyleContext from "../../contexts/StyleContext";
-import blogData from "../blogHome/blogData.json";
+import {blogTags, fetchPublishedBlogs, formatBlogDate} from "../../lib/blogs";
 import "../blogHome/BlogHome.scss";
-
-function chooseRandomBlogs(blogs, count) {
-  return [...blogs]
-    .sort(() => Math.random() - 0.5)
-    .slice(0, count);
-}
 
 export default function Blogs() {
   const {isDark} = useContext(StyleContext);
-  const [featuredBlogs] = useState(() => chooseRandomBlogs(blogData, 3));
+  const [featuredBlogs, setFeaturedBlogs] = useState([]);
+  const [hasError, setHasError] = useState(false);
+
+  useEffect(() => {
+    fetchPublishedBlogs()
+      .then(blogs => setFeaturedBlogs(blogs.slice(0, 3)))
+      .catch(() => setHasError(true));
+  }, []);
 
   if (!blogSection.display) {
     return null;
@@ -30,13 +31,14 @@ export default function Blogs() {
         </section>
 
         <div className="blog-grid" aria-label="Featured blog articles">
+          {hasError && <p>We could not load the blogs right now.</p>}
           {featuredBlogs.map(blog => (
             <article className="blog-tile" key={blog.id}>
-              <img src={blog.image} alt={blog.imageAlt} />
+              <img src={blog.cover_image_url} alt={blog.title} />
               <div className="blog-tile-body">
                 <div className="blog-meta">
-                  <span>{blog.tag}</span>
-                  <time dateTime={blog.date}>{blog.dateLabel}</time>
+                  <span>{blogTags(blog)[0]}</span>
+                  <time dateTime={blog.published_at}>{formatBlogDate(blog.published_at)}</time>
                 </div>
                 <h2>{blog.title}</h2>
                 <p>{blog.description}</p>

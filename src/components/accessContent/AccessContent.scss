@@ -64,6 +64,18 @@
   padding: 13px 18px;
 }
 
+.access-content button:disabled,
+.access-content input:disabled {
+  cursor: wait;
+  opacity: 0.65;
+}
+
+.access-content-progress {
+  color: $buttonColor;
+  font-size: 0.88rem;
+  margin: 8px 0 0;
+}
+
 .access-content-error {
   color: #b42318;
   margin: 8px 0 0;
@@ -83,6 +95,43 @@
   margin-top: 24px;
   padding: 0;
   text-decoration: underline;
+}
+
+.access-content-link:disabled {
+  cursor: wait;
+}
+
+.dark-mode .access-content-panel {
+  background: #202735;
+  color: #f4f0f7;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.24);
+}
+
+.dark-mode .access-content-intro,
+.dark-mode .access-content label {
+  color: #d0cad8;
+}
+
+.dark-mode .access-content input {
+  border-color: rgba(255, 255, 255, 0.18);
+  background: #171c28;
+  color: #f4f0f7;
+}
+
+.dark-mode .access-content input::placeholder {
+  color: #9e97a9;
+}
+
+.dark-mode .access-content-error {
+  color: #ff9f9a;
+}
+
+.dark-mode .access-content-success {
+  color: #83e0b6;
+}
+
+.dark-mode .access-content-progress {
+  color: #dfc3f2;
 }
 
 @media (max-width: 520px) {

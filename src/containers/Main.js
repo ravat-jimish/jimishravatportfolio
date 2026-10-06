@@ -1,5 +1,5 @@
 import React, {useContext, useEffect, useState} from "react";
-import {Redirect, Route, Switch, useLocation, useParams} from "react-router-dom";
+import {Redirect, Route, Switch, useLocation} from "react-router-dom";
 import Header from "../components/header/Header";
 import Greeting from "./greeting/Greeting";
 import Skills from "./skills/Skills";
@@ -18,10 +18,9 @@ import Twitter from "./twitter-embed/twitter";
 import Profile from "./profile/Profile";
 import Admin from "./admin/Admin";
 import BlogHome from "./blogHome/BlogHome";
-import {AccessControlledBlogArticle} from "./blogHome/BlogArticle";
+import BlogArticle from "./blogHome/BlogArticle";
 import BlogRouteTransition from "./blogHome/BlogRouteTransition";
 import AccessContent from "../components/accessContent/AccessContent";
-import blogData from "./blogHome/blogData.json";
 import SplashScreen from "./splashScreen/SplashScreen";
 import {splashScreen} from "../portfolio";
 import {StyleProvider} from "../contexts/StyleContext";
@@ -29,15 +28,6 @@ import AppConfigContext from "../contexts/appConfig/AppConfigContext";
 import {useLocalStorage} from "../hooks/useLocalStorage";
 import HelperPage from "./helperPages/HelperPage";
 import "./Main.scss";
-
-const PrivateAwareBlogArticle = () => {
-  const {slug} = useParams();
-  const blog = blogData.find(article => article.slug === slug);
-
-  return (
-    <AccessControlledBlogArticle isPrivate={Boolean(blog && blog.isPrivate)} />
-  );
-};
 
 const Main = () => {
   const {isPathUnderMaintenance} = useContext(AppConfigContext);
@@ -101,7 +91,7 @@ const Main = () => {
                 </Route>
                 <Route exact path="/blog/:slug">
                   <BlogRouteTransition>
-                    <PrivateAwareBlogArticle />
+                    <BlogArticle />
                   </BlogRouteTransition>
                 </Route>
                 <Route exact path="/blog">

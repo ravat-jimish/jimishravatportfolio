@@ -1,46 +1,19 @@
 import React, {useState} from "react";
-import {Redirect, useHistory, useLocation} from "react-router-dom";
+import {useHistory, useLocation} from "react-router-dom";
+import {
+  invokeEdgeFunction,
+  savePrivateAccessTokens
+} from "../../lib/edgeFunctions";
 import "./AccessContent.scss";
-
-export const ACCESS_COOKIE_NAME = "contentAccess";
-const ACCESS_COOKIE_VALUE = "granted";
-const ACCESS_COOKIE_DAYS = 7;
-const ACCESS_USER_ID = "userID";
-const ACCESS_PASSWORD = "password";
-const PASSWORD_REQUEST_URL = process.env.REACT_APP_PASSWORD_REQUEST_URL;
-
-function hasAccessCookie() {
-  return document.cookie.split("; ").some(
-    cookie => cookie === `${ACCESS_COOKIE_NAME}=${ACCESS_COOKIE_VALUE}`
-  );
-}
 
 function getRedirectPath(search) {
   const redirectPath = new URLSearchParams(search).get("redirect");
   return redirectPath && redirectPath.startsWith("/") ? redirectPath : "/";
 }
 
-function setAccessCookie() {
-  const expires = new Date(
-    Date.now() + ACCESS_COOKIE_DAYS * 24 * 60 * 60 * 1000
-  ).toUTCString();
-  document.cookie = `${ACCESS_COOKIE_NAME}=${ACCESS_COOKIE_VALUE}; expires=${expires}; path=/`;
-}
-
 export function withAccessContent(WrappedComponent) {
-  function AccessProtectedContent({isPrivate, ...props}) {
-    const location = useLocation();
-
-    if (!isPrivate || hasAccessCookie()) {
-      return <WrappedComponent {...props} />;
-    }
-
-    const redirect = `${location.pathname}${location.search}${location.hash}`;
-    return (
-      <Redirect
-        to={`/accessContent?redirect=${encodeURIComponent(redirect)}`}
-      />
-    );
+  function AccessProtectedContent(props) {
+    return <WrappedComponent {...props} />;
   }
 
   return AccessProtectedContent;
@@ -56,53 +29,76 @@ export default function AccessContent() {
   const [email, setEmail] = useState("");
   const [error, setError] = useState("");
   const [requestSent, setRequestSent] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const redirectPath = getRedirectPath(location.search);
+  const articleSlug = redirectPath.split("/").filter(Boolean).pop() || "";
 
-  function handleSubmit(event) {
+  async function handleSubmit(event) {
     event.preventDefault();
+    if (isSubmitting) return;
+    setError("");
+    setIsSubmitting(true);
 
-    if (userId !== ACCESS_USER_ID || password !== ACCESS_PASSWORD) {
-      setError("That user ID or password is not recognised.");
-      return;
+    try {
+      const result = await invokeEdgeFunction("verify-access", {
+        body: {
+          deviceToken: window.localStorage.getItem("paccess_device"),
+          email: userId,
+          password,
+          slug: articleSlug
+        }
+      });
+      savePrivateAccessTokens(result);
+      history.replace(redirectPath);
+    } catch (requestError) {
+      setError(
+        requestError.payload?.error === "TOO_MANY_ATTEMPTS"
+          ? "Too many attempts. Please try again later."
+          : requestError.payload?.error === "DEVICE_LIMIT_REACHED"
+            ? "This access grant has reached its device limit."
+            : "That email or password is not recognised."
+      );
+    } finally {
+      setIsSubmitting(false);
     }
-
-    setAccessCookie();
-    history.replace(getRedirectPath(location.search));
   }
 
   async function handlePasswordRequest(event) {
     event.preventDefault();
+    if (isSubmitting) return;
     setError("");
     setRequestSent(false);
-
-    if (!PASSWORD_REQUEST_URL) {
-      setError("Password requests are not available yet. Please contact the site owner.");
-      return;
-    }
+    setIsSubmitting(true);
 
     try {
-      const response = await fetch(PASSWORD_REQUEST_URL, {
-        body: JSON.stringify({email, name}),
-        headers: {"Content-Type": "application/json"},
-        method: "POST"
+      await invokeEdgeFunction("request-access", {
+        body: {
+          email,
+          message: name ? `Requested by ${name}` : null,
+          slug: articleSlug
+        }
       });
-
-      if (!response.ok) {
-        throw new Error("Password request failed");
-      }
-
       setRequestSent(true);
     } catch (requestError) {
-      setError("We could not send the password right now. Please try again later.");
+      setError(
+        requestError.payload?.error === "TOO_MANY_REQUESTS"
+          ? "Too many requests. Please try again later."
+          : "We could not send the request right now. Please try again later."
+      );
+    } finally {
+      setIsSubmitting(false);
     }
   }
 
   function showLogin() {
+    if (isSubmitting) return;
     setView("login");
     setError("");
     setRequestSent(false);
   }
 
   function showPasswordRequest() {
+    if (isSubmitting) return;
     setView("request");
     setError("");
     setRequestSent(false);
@@ -119,13 +115,14 @@ export default function AccessContent() {
               Enter your user ID and password to read this article.
             </p>
             <form onSubmit={handleSubmit}>
-              <label htmlFor="access-user-id">User ID</label>
+              <label htmlFor="access-user-id">Email address</label>
               <input
                 id="access-user-id"
                 onChange={event => setUserId(event.target.value)}
                 required
-                type="text"
+                type="email"
                 value={userId}
+                disabled={isSubmitting}
               />
               <label htmlFor="access-password">Password</label>
               <input
@@ -134,11 +131,13 @@ export default function AccessContent() {
                 required
                 type="password"
                 value={password}
+                disabled={isSubmitting}
               />
               {error && <p className="access-content-error" role="alert">{error}</p>}
-              <button type="submit">Continue</button>
+              {isSubmitting && <p className="access-content-progress" role="status">Verifying your access in the background...</p>}
+              <button disabled={isSubmitting} type="submit">{isSubmitting ? "Checking..." : "Continue"}</button>
             </form>
-            <button className="access-content-link" onClick={showPasswordRequest} type="button">
+            <button className="access-content-link" disabled={isSubmitting} onClick={showPasswordRequest} type="button">
               Need a password?
             </button>
           </>
@@ -146,7 +145,9 @@ export default function AccessContent() {
           <>
             <h1 id="access-title">Request a password</h1>
             <p className="access-content-intro">
-              Tell us where to send your randomly generated password.
+              Tell us where to send your randomly generated password. An admin
+              will review your request, and your password will be emailed after
+              approval.
             </p>
             <form onSubmit={handlePasswordRequest}>
               <label htmlFor="access-name">Name</label>
@@ -156,6 +157,7 @@ export default function AccessContent() {
                 required
                 type="text"
                 value={name}
+                disabled={isSubmitting}
               />
               <label htmlFor="access-email">Email address</label>
               <input
@@ -164,16 +166,19 @@ export default function AccessContent() {
                 required
                 type="email"
                 value={email}
+                disabled={isSubmitting}
               />
               {error && <p className="access-content-error" role="alert">{error}</p>}
+              {isSubmitting && <p className="access-content-progress" role="status">Sending your request in the background...</p>}
               {requestSent && (
                 <p className="access-content-success" role="status">
-                  Check your mailbox for your password.
+                  Your request was sent for admin approval. You will receive
+                  your password by email after it is approved.
                 </p>
               )}
-              <button type="submit">Request password</button>
+              <button disabled={isSubmitting} type="submit">{isSubmitting ? "Sending..." : "Request password"}</button>
             </form>
-            <button className="access-content-link" onClick={showLogin} type="button">
+            <button className="access-content-link" disabled={isSubmitting} onClick={showLogin} type="button">
               Already have a password? Sign in
             </button>
           </>

@@ -1,23 +1,36 @@
-import React, {useContext, useMemo, useState} from "react";
+import React, {useContext, useEffect, useMemo, useState} from "react";
 import Fade from "react-reveal/Fade";
 import {Link} from "react-router-dom";
 import StyleContext from "../../contexts/StyleContext";
-import blogData from "./blogData.json";
+import {blogTags, fetchPublishedBlogs, formatBlogDate} from "../../lib/blogs";
 import "./BlogHome.scss";
 
 export default function BlogHome() {
   const {isDark} = useContext(StyleContext);
   const [selectedTag, setSelectedTag] = useState("All");
   const [currentPage, setCurrentPage] = useState(1);
+  const [blogs, setBlogs] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [hasError, setHasError] = useState(false);
   const pageSize = 6;
 
-  const tags = ["All", ...new Set(blogData.map(blog => blog.tag))];
+  useEffect(() => {
+    fetchPublishedBlogs()
+      .then(nextBlogs => {
+        setBlogs(nextBlogs);
+        setHasError(false);
+      })
+      .catch(() => setHasError(true))
+      .finally(() => setIsLoading(false));
+  }, []);
+
+  const tags = ["All", ...new Set(blogs.flatMap(blog => blogTags(blog)))];
   const filteredBlogs = useMemo(
     () =>
       selectedTag === "All"
-        ? blogData
-        : blogData.filter(blog => blog.tag === selectedTag),
-    [selectedTag]
+        ? blogs
+        : blogs.filter(blog => blogTags(blog).includes(selectedTag)),
+    [blogs, selectedTag]
   );
   const featuredBlog = filteredBlogs[0];
   const gridStart = (currentPage - 1) * pageSize + 1;
@@ -60,16 +73,19 @@ export default function BlogHome() {
         ))}
       </nav>
 
+      {isLoading && <p>Loading blogs...</p>}
+      {hasError && <p>We could not load the blogs right now.</p>}
+
       {featuredBlog && (
         <Fade bottom duration={800} distance="20px">
           <article className="blog-featured">
             <div className="blog-featured-image-wrap">
-              <img src={featuredBlog.image} alt={featuredBlog.imageAlt} />
+              <img src={featuredBlog.cover_image_url} alt={featuredBlog.title} />
             </div>
             <div className="blog-featured-content">
               <div className="blog-meta">
-                <span>{featuredBlog.tag}</span>
-                <time dateTime={featuredBlog.date}>{featuredBlog.dateLabel}</time>
+                <span>{blogTags(featuredBlog)[0]}</span>
+                <time dateTime={featuredBlog.published_at}>{formatBlogDate(featuredBlog.published_at)}</time>
               </div>
               <h2>{featuredBlog.title}</h2>
               <p>{featuredBlog.description}</p>
@@ -83,12 +99,12 @@ export default function BlogHome() {
 
       <section className="blog-grid" aria-label="All articles">
         {gridBlogs.map(blog => (
-          <article className="blog-tile" key={blog.id}>
-            <img src={blog.image} alt={blog.imageAlt} />
+            <article className="blog-tile" key={blog.id}>
+              <img src={blog.cover_image_url} alt={blog.title} />
             <div className="blog-tile-body">
               <div className="blog-meta">
-                <span>{blog.tag}</span>
-                <time dateTime={blog.date}>{blog.dateLabel}</time>
+                <span>{blogTags(blog)[0]}</span>
+                <time dateTime={blog.published_at}>{formatBlogDate(blog.published_at)}</time>
               </div>
               <h2>{blog.title}</h2>
               <p>{blog.description}</p>
