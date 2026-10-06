@@ -16,6 +16,7 @@ import Education from "./education/Education";
 import ScrollToTopButton from "./topbutton/Top";
 import Twitter from "./twitter-embed/twitter";
 import Profile from "./profile/Profile";
+import Admin from "./admin/Admin";
 import BlogHome from "./blogHome/BlogHome";
 import {AccessControlledBlogArticle} from "./blogHome/BlogArticle";
 import BlogRouteTransition from "./blogHome/BlogRouteTransition";
@@ -94,6 +95,9 @@ const Main = () => {
                 </Route>
                 <Route exact path="/accessContent">
                   <AccessContent />
+                </Route>
+                <Route exact path="/admin">
+                  <Admin />
                 </Route>
                 <Route exact path="/blog/:slug">
                   <BlogRouteTransition>

@@ -9,6 +9,9 @@
 /coverage
 /build
 
+supabase
+
+.vscode
 
 # misc
 .DS_Store
