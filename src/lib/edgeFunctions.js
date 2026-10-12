@@ -67,18 +67,22 @@ export function trackVisit(path = window.location.pathname) {
   }).catch(() => null);
 }
 
-export function getPrivateAccessHeaders() {
+export async function getPrivateAccessHeaders() {
   const sessionToken = window.localStorage.getItem("paccess_session");
   const deviceToken = window.localStorage.getItem("paccess_device");
 
-  if (!sessionToken || !deviceToken) {
-    return {};
+  if (sessionToken && deviceToken) {
+    return {
+      Authorization: `Bearer ${sessionToken}`,
+      "x-device-token": deviceToken
+    };
   }
 
-  return {
-    Authorization: `Bearer ${sessionToken}`,
-    "x-device-token": deviceToken
-  };
+  const {data: {session}} = await supabase.auth.getSession();
+
+  return session?.access_token
+    ? {Authorization: `Bearer ${session.access_token}`}
+    : {};
 }
 
 export function savePrivateAccessTokens({sessionToken, deviceToken}) {

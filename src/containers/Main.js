@@ -28,6 +28,7 @@ import AppConfigContext from "../contexts/appConfig/AppConfigContext";
 import {useLocalStorage} from "../hooks/useLocalStorage";
 import HelperPage from "./helperPages/HelperPage";
 import "./Main.scss";
+import BirthdayAccessGate from "./birthday/BirthdayAccessGate";
 
 const Main = () => {
   const {isPathUnderMaintenance} = useContext(AppConfigContext);
@@ -88,6 +89,9 @@ const Main = () => {
                 </Route>
                 <Route exact path="/admin">
                   <Admin />
+                </Route>
+                <Route exact path="/kruti">
+                  <BirthdayAccessGate />
                 </Route>
                 <Route exact path="/blog/:slug">
                   <BlogRouteTransition>

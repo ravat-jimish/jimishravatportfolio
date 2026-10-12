@@ -55,7 +55,7 @@ export default function BlogArticle() {
         const access = await invokeEdgeFunction(
           `check-access?slug=${encodeURIComponent(currentBlog.slug)}`,
           {
-            headers: getPrivateAccessHeaders(),
+            headers: await getPrivateAccessHeaders(),
             method: "GET"
           }
         );
@@ -70,7 +70,7 @@ export default function BlogArticle() {
         const result = await invokeEdgeFunction(
           `content?slug=${encodeURIComponent(currentBlog.slug)}`,
           {
-            headers: getPrivateAccessHeaders(),
+            headers: await getPrivateAccessHeaders(),
             method: "GET"
           }
         );

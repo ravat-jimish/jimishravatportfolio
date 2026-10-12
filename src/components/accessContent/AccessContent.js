@@ -4,6 +4,7 @@ import {
   invokeEdgeFunction,
   savePrivateAccessTokens
 } from "../../lib/edgeFunctions";
+import {supabase} from "../../lib/supabase";
 import "./AccessContent.scss";
 
 function getRedirectPath(search) {
@@ -40,6 +41,37 @@ export default function AccessContent() {
     setIsSubmitting(true);
 
     try {
+      const {data: authData} = await supabase.auth.signInWithPassword({
+        email: userId,
+        password
+      });
+
+      if (authData.session) {
+        let authAccessGranted = false;
+
+        try {
+          const access = await invokeEdgeFunction(
+            `check-access?slug=${encodeURIComponent(articleSlug)}`,
+            {
+              headers: {
+                Authorization: `Bearer ${authData.session.access_token}`
+              },
+              method: "GET"
+            }
+          );
+
+          if (access.authorized) {
+            authAccessGranted = true;
+            history.replace(redirectPath);
+            return;
+          }
+        } finally {
+          if (!authAccessGranted) {
+            await supabase.auth.signOut();
+          }
+        }
+      }
+
       const result = await invokeEdgeFunction("verify-access", {
         body: {
           deviceToken: window.localStorage.getItem("paccess_device"),
