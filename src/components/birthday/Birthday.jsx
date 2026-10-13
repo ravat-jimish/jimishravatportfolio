@@ -1339,7 +1339,7 @@ export default function BirthdayExperience({onSignOut}) {
                 dangerously cute again.
                 <br />
                 <br />
-                Unfortunately...
+                Fortunately...
                 <strong> it's you.</strong> 😭❤️
               </p>
             </div>
