@@ -1,4 +1,8 @@
 import React, {useEffect, useMemo, useState} from "react";
+import kruti_1 from "../../assets/images/Kruti_1.JPG";
+import kruti_2 from "../../assets/images/Kruti_2.JPG";
+import kruti_3 from "../../assets/images/Kruti_3.JPG";
+import kruti_4 from "../../assets/images/Kruti_4.PNG";
 
 /*
   ============================================================
@@ -73,59 +77,60 @@ const CHUMBAK_DIALOGUES = [
 */
 const PHOTOS = [
   {
-    src: "https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=900&q=85",
-    title: "The smile problem",
-    text: "Honestly, this smile should require a license."
+    src: kruti_1,
+    title: "The smile",
+    text: "Honestly, this smile should require a license. Also this cuteness should be illegal. 😘"
   },
   {
-    src: "https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=900&q=85",
-    title: "My favourite view",
-    text: "Somehow you keep becoming prettier every time I look at you."
+    src: kruti_2,
+    title: "Uff those eyes",
+    text: "That look. Those eyes. That smile. That hair. That everything. My favourite person in the world."
   },
   {
-    src: "https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=900&q=85",
-    title: "Us being us",
+    src: kruti_3,
+    title: "First Date Vibes",
     text: "A little chaos, a lot of laughter, and somehow... my favourite thing."
   },
   {
-    src: "https://images.unsplash.com/photo-1494774157365-9e04c6720e47?auto=format&fit=crop&w=900&q=85",
+    src: kruti_4,
     title: "My person",
     text: "Out of everyone in this giant world, I somehow got you."
   }
 ];
 
 const REASONS = [
-  "I love the way you make ordinary days feel special.",
-  "I love how your smile can completely change my mood.",
-  "I love our silly conversations that somehow last forever.",
-  "I love that I can be completely myself around you.",
+  "I love the way you make ordinary days feel special My Dear Krutiii ❤️",
+  "I love how your smile can completely change my mood my sweet Kaju Katlii ❤️",
+  "I love our silly conversations that somehow last forever my cutiee ❤️",
+  "I love that I can be completely myself around you and no wonder how crazy I get my sweet pumpkins ❤️",
   "I love the little things you do that you don't even realize I notice.",
-  "I love imagining all the places, memories and adventures we'll have together.",
-  "And most importantly... I love that it's you. Always you."
+  "I love imagining all the places, memories and adventures we'll have together in the future my sweetiee ❤️",
+  "And most importantly... I love that it's you. Always you and only you Babyy ❤️"
 ];
 
 const LOVE_LETTER = `
 My beautiful ${HER_NAME},
 
-Today is technically your birthday.
+Today is technically and practically your birthday. And which makes this day most important for my life.
 
-But somehow, I feel like I am the lucky one who got the present.
+But somehow, I feel like I am the lucky one who got this awesome sweet present in my life. You. 😘
 
 You have become such a beautiful part of my life that sometimes I genuinely wonder how I got so lucky.
 
 You are my favourite person to talk to,
 my favourite person to annoy,
 my favourite person to miss,
+my favorite person to laugh with,
 my favourite person to make memories with,
 and definitely my favourite person to love.
 
-I hope this new year of your life gives you everything your heart wishes for.
+I hope this new year of your life gives you everything your heart wishes for and god bless you with all the happiness, love and success in the world.
 
 I hope we travel to places we've never seen,
 eat food we absolutely did not need,
 laugh at jokes that make absolutely no sense,
-take approximately 4,738 unnecessary photos,
-and continue irritating each other for many, many years.
+take approximately 1000000 unnecessary photos,
+and continue irritating each other for many, many years. From twinkles till wrinkles. 😘
 
 There will be amazing days.
 There will be difficult days.
@@ -136,15 +141,18 @@ I want you beside me.
 
 Because life feels a little more beautiful with you in it.
 
-Happy Birthday, my love.
+Happy Birthday, my love, Krutii
 
 Stay exactly the way you are.
 
 Cute.
 Crazy.
 Beautiful.
-Annoying.
+Sexyy.
+Hottie.
 And completely, ridiculously, wonderfully YOU.
+
+And also most importantly, stay mine. Forever. ❤️
 
 I love you more than this tiny website could ever explain.
 
@@ -275,16 +283,25 @@ export default function BirthdayExperience({onSignOut}) {
         }
 
         .birthday-app {
+          all: initial;
+          display: block;
           min-height: 100vh;
           overflow-x: hidden;
           color: #fff7fb;
           font-family: "DM Sans", sans-serif;
+          color-scheme: dark;
+          isolation: isolate;
           background:
             radial-gradient(circle at 10% 10%, rgba(255, 120, 170, 0.20), transparent 28%),
             radial-gradient(circle at 90% 20%, rgba(185, 115, 255, 0.20), transparent 25%),
             radial-gradient(circle at 50% 100%, rgba(255, 80, 135, 0.14), transparent 35%),
             linear-gradient(160deg, #170c17 0%, #261020 48%, #140a16 100%);
           position: relative;
+        }
+
+        .birthday-app,
+        .birthday-app * {
+          color: inherit;
         }
 
         .birthday-app::before {
@@ -1462,7 +1479,7 @@ export default function BirthdayExperience({onSignOut}) {
                   <div className="mission-emoji">💕</div>
 
                   <div className="mission-text">
-                    <div className="mission-name">Tap the heart</div>
+                    <div className="mission-name">A little Joy Dance</div>
 
                     <div className="mission-note">
                       Yes, this is absolutely necessary.
@@ -1479,7 +1496,7 @@ export default function BirthdayExperience({onSignOut}) {
                   <div className="mission-emoji">💋</div>
 
                   <div className="mission-text">
-                    <div className="mission-name">Send imaginary kiss</div>
+                    <div className="mission-name">Give kisses to the person created this</div>
 
                     <div className="mission-note">
                       Delivery successful. Probably.

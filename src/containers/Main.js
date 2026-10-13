@@ -90,7 +90,7 @@ const Main = () => {
                 <Route exact path="/admin">
                   <Admin />
                 </Route>
-                <Route exact path="/kruti">
+                <Route exact path="/birthday/kruti">
                   <BirthdayAccessGate />
                 </Route>
                 <Route exact path="/blog/:slug">
