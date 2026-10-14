@@ -29,6 +29,7 @@ import {useLocalStorage} from "../hooks/useLocalStorage";
 import HelperPage from "./helperPages/HelperPage";
 import "./Main.scss";
 import BirthdayAccessGate from "./birthday/BirthdayAccessGate";
+import SiteSEO from "../components/seo/SiteSEO";
 
 const Main = () => {
   const {isPathUnderMaintenance} = useContext(AppConfigContext);
@@ -60,6 +61,7 @@ const Main = () => {
   return (
     <div className={isDark ? "dark-mode" : null}>
       <StyleProvider value={{isDark: isDark, changeTheme: changeTheme}}>
+        <SiteSEO pathname={location.pathname} />
         {isShowingSplashAnimation && splashScreen.enabled ? (
           <SplashScreen />
         ) : (

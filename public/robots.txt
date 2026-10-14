@@ -1,2 +1,7 @@
-# https://www.robotstxt.org/robotstxt.html
 User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /brithday/kruti
+Disallow: /birthday/kruti
+
+Sitemap: https://jimishravat.in/sitemap.xml

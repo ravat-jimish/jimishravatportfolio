@@ -5,6 +5,9 @@ import Main from "./containers/Main";
 import {AppConfigProvider} from "./contexts/appConfig/AppConfigContext";
 import {trackVisit} from "./lib/edgeFunctions";
 
+
+
+
 function App() {
   useEffect(() => {
     trackVisit();

@@ -9,6 +9,7 @@ import {
 import {blogTags, fetchPublishedBlogs, formatBlogDate} from "../../lib/blogs";
 import {withAccessContent} from "../../components/accessContent/AccessContent";
 import "./BlogArticle.scss";
+import BlogSEO from "../../components/blogCard/BlogSEO";
 
 export default function BlogArticle() {
   const {isDark} = useContext(StyleContext);
@@ -43,10 +44,11 @@ export default function BlogArticle() {
           setBlog(currentBlog);
           setRelatedBlogs(
             blogs
-              .filter(article =>
-                blogTags(article).some(tag =>
-                  blogTags(currentBlog).includes(tag)
-                ) && article.slug !== currentBlog.slug
+              .filter(
+                article =>
+                  blogTags(article).some(tag =>
+                    blogTags(currentBlog).includes(tag)
+                  ) && article.slug !== currentBlog.slug
               )
               .slice(0, 3)
           );
@@ -117,15 +119,21 @@ export default function BlogArticle() {
   if (!blog) {
     if (isLoading) {
       return (
-        <main className={isDark ? "blog-article blog-article-dark" : "blog-article"}>
+        <main
+          className={isDark ? "blog-article blog-article-dark" : "blog-article"}
+        >
           <p>Loading article...</p>
         </main>
       );
     }
 
     return (
-      <main className={isDark ? "blog-article blog-article-dark" : "blog-article"}>
-        <Link className="blog-back-link" to="/blog">&#8592; Back to all blogs</Link>
+      <main
+        className={isDark ? "blog-article blog-article-dark" : "blog-article"}
+      >
+        <Link className="blog-back-link" to="/blog">
+          &#8592; Back to all blogs
+        </Link>
         <h1>Article not found</h1>
         <p>The article you are looking for does not exist.</p>
       </main>
@@ -133,17 +141,28 @@ export default function BlogArticle() {
   }
 
   return (
-    <main className={isDark ? "blog-article blog-article-dark" : "blog-article"}>
-      <Link className="blog-back-link" to="/blog">&#8592; Back to all blogs</Link>
+    <main
+      className={isDark ? "blog-article blog-article-dark" : "blog-article"}
+    >
+      <BlogSEO post={blog} />
+      <Link className="blog-back-link" to="/blog">
+        &#8592; Back to all blogs
+      </Link>
       <header className="blog-article-header">
         <div className="blog-meta">
           <span>{blogTags(blog)[0]}</span>
-          <time dateTime={blog.published_at}>{formatBlogDate(blog.published_at)}</time>
+          <time dateTime={blog.published_at}>
+            {formatBlogDate(blog.published_at)}
+          </time>
         </div>
         <h1>{blog.title}</h1>
         <p>{blog.description}</p>
       </header>
-      <img className="blog-article-cover" src={blog.cover_image_url} alt={blog.title} />
+      <img
+        className="blog-article-cover"
+        src={blog.cover_image_url}
+        alt={blog.title}
+      />
       <div className="blog-article-layout">
         <article className="blog-article-content">
           {requiresAccess && (
@@ -180,11 +199,16 @@ export default function BlogArticle() {
                 key={relatedBlog.id}
                 to={`/blog/${relatedBlog.slug}`}
               >
-                <img src={relatedBlog.cover_image_url} alt={relatedBlog.title} />
+                <img
+                  src={relatedBlog.cover_image_url}
+                  alt={relatedBlog.title}
+                />
                 <div>
                   <div className="blog-meta">
                     <span>{blogTags(relatedBlog)[0]}</span>
-                    <time dateTime={relatedBlog.published_at}>{formatBlogDate(relatedBlog.published_at)}</time>
+                    <time dateTime={relatedBlog.published_at}>
+                      {formatBlogDate(relatedBlog.published_at)}
+                    </time>
                   </div>
                   <h3>{relatedBlog.title}</h3>
                 </div>
