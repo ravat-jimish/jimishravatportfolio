@@ -1,7 +1,7 @@
 import {createContext} from "react";
 
 const defaultConfig = {
-  maintenanceRoutes: ["/blog"]
+  maintenanceRoutes: []
 };
 
 const isPathUnderMaintenance = pathname =>
