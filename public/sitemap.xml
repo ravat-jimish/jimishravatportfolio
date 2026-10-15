@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://jimishravat.in/</loc>
+    <loc>https://www.jimishravat.in/</loc>
     <lastmod>2026-10-15T13:11:36.742Z</lastmod>
   </url>
   <url>
-    <loc>https://jimishravat.in/blog</loc>
+    <loc>https://www.jimishravat.in/blog</loc>
     <lastmod>2026-10-15T13:11:36.742Z</lastmod>
   </url>
   <url>
-    <loc>https://jimishravat.in/blog/jwt-vs-session-authentication</loc>
+    <loc>https://www.jimishravat.in/blog/jwt-vs-session-authentication</loc>
     <lastmod>2026-10-15T12:46:00.747574+00:00</lastmod>
   </url>
   <url>
-    <loc>https://jimishravat.in/blog/react-seo-single-page-apps</loc>
+    <loc>https://www.jimishravat.in/blog/react-seo-single-page-apps</loc>
     <lastmod>2026-10-15T13:09:16.848908+00:00</lastmod>
   </url>
 </urlset>

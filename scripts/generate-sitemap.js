@@ -3,7 +3,7 @@ const path = require("path");
 const https = require("https");
 require("dotenv").config();
 
-const SITE_URL = "https://jimishravat.in";
+const SITE_URL = "https://www.jimishravat.in";
 const sitemapPath = path.join(__dirname, "..", "public", "sitemap.xml");
 
 function escapeXml(value) {
