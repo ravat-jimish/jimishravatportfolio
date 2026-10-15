@@ -1,7 +1,4 @@
 User-agent: *
-Allow: /
-Disallow: /admin
-Disallow: /brithday/kruti
-Disallow: /birthday/kruti
+Allow: 
 
 Sitemap: https://jimishravat.in/sitemap.xml

@@ -15,8 +15,10 @@ export async function fetchPublishedBlogs() {
       author_name,
       seo_title,
       seo_description,
+      extra_metadata,
       status,
       published_at,
+      updated_at,
       created_at
     `)
     .eq("content_type", "BLOG")
